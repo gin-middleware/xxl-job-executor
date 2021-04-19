@@ -27,6 +27,7 @@ func main() {
 		xxl.RegistryKey("golang-jobs"), //执行器名称
 	)
 	exec.Init()
+	defer exec.Stop()
 	//添加到gin路由
 	r := gin.Default()
 	xxl_job_executor_gin.XxlJobMux(r, exec)
